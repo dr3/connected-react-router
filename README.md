@@ -1,3 +1,16 @@
+# Fork - @dr3/connected-react-router
+
+### This is a fork of https://github.com/supasate/connected-react-router which includes the following 2 changes.
+
+
+- Change 1, which disables query injection if one has already been set up. Its code can be found here https://github.com/supasate/connected-react-router/pull/396.
+
+- Change 2, which adds a prop to stop the initial location pop. Its code can be found here https://github.com/supasate/connected-react-router/pull/398
+
+These changes are published `@dr3/connected-react-router` version `6.9.1`
+
+---
+
 > Breaking change in v5.0.0! Please read [How to migrate from v4 to v5/v6](https://github.com/supasate/connected-react-router/blob/master/FAQ.md#how-to-migrate-from-v4-to-v5v6).
 
 > v6.0.0 requires React v16.4.0 and React Redux v6.0 / v7.0.
