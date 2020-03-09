@@ -69,10 +69,11 @@ const createConnectedRouter = (structure) => {
 
       // Listen to history changes
       this.unlisten = history.listen(handleLocationChange)
-      // Dispatch a location change action for the initial location.
-      // This makes it backward-compatible with react-router-redux.
-      // But, we add `isFirstRendering` to `true` to prevent double-rendering.
+    
       if (!props.noInitialPop) {
+        // Dispatch a location change action for the initial location.
+        // This makes it backward-compatible with react-router-redux.
+        // But, we add `isFirstRendering` to `true` to prevent double-rendering.
         handleLocationChange(history.location, history.action, true)
       }
     }
