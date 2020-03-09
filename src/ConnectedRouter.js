@@ -72,7 +72,9 @@ const createConnectedRouter = (structure) => {
       // Dispatch a location change action for the initial location.
       // This makes it backward-compatible with react-router-redux.
       // But, we add `isFirstRendering` to `true` to prevent double-rendering.
-      handleLocationChange(history.location, history.action, true)
+      if (!props.noInitialPop) {
+        handleLocationChange(history.location, history.action, true)
+      }
     }
 
     componentWillUnmount() {
@@ -105,6 +107,7 @@ const createConnectedRouter = (structure) => {
     basename: PropTypes.string,
     children: PropTypes.oneOfType([ PropTypes.func, PropTypes.node ]),
     onLocationChanged: PropTypes.func.isRequired,
+    noInitialPop: PropTypes.bool,
   }
 
   const mapDispatchToProps = dispatch => ({
